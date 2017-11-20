@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "test": "(dropdb --if-exists test-quintanas-web-store && createdb test-quintanas-web-store) && NODE_ENV=test mocha"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -17,6 +18,9 @@
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "supertest": "^3.0.0"
   }
 }
