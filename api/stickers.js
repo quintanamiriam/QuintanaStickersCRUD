@@ -42,4 +42,14 @@ router.post('/', (req, res, next) => {
   }
 });
 
+router.put('/:id', isValidId, (req, res, next) => {
+  if (validSticker(req.body))
+    queries.update(req.params.id, req.body).then(stickers => {
+      res.json(stickers[0]);
+    });
+  } else {
+    next(new Error('Invalid sticker'));
+  }
+});
+
 module.exports = router;
