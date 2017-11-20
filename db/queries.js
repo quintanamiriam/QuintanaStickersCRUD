@@ -7,4 +7,7 @@ module.exports = {
  getOne(id) {
    return knex('sticker').where('id', id).first();
  },
+ create(sticker) {
+   return knex('sticker').insert(sticker, '*');
+ },
 }

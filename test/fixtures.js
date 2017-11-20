@@ -75,4 +75,5 @@ const sticker = {
 
 module.exports = {
   stickers,
+  sticker
 }
